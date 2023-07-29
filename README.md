@@ -1,28 +1,41 @@
-# Quick Links
-- [App (Frontend)](app.md)
-- [AI](ai.md)
-- [Backend](backend.md)
+# Website
 
+This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
 
-# Quick start
+### Installation
 
-It is recommended to install `docsify-cli` globally, which helps initializing and previewing the website locally.
-
-```bash
-npm i docsify-cli -g
+```
+$ yarn
 ```
 
-Preview docs with
-```bash
-docsify server
+### Local Development
+
+```
+$ yarn start
 ```
 
-## Writing content
+This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
+### Build
 
-- `index.html` as the entry file
-- `README.md` as the home page
-- `.nojekyll` prevents GitHub Pages from ignoring files that begin with an underscore
+```
+$ yarn build
+```
 
-You can easily update the documentation in `./README.md`, of course you can add [more pages](newpage.md).
+This command generates static content into the `build` directory and can be served using any static contents hosting service.
 
+### Deployment
+
+Using SSH:
+
+```
+$ USE_SSH=true yarn deploy
+```
+
+Not using SSH:
+
+```
+$ GIT_USER=<Your GitHub username> yarn deploy
+```
+
+If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
